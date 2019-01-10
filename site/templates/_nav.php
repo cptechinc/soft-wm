@@ -1,11 +1,4 @@
-<?php 
-    if ($config->COMPANYNBR == 2) {
-        $bg = 'bg-dark';
-    } else {
-        $bg = 'bg-primary';
-    }
-?>
-<nav class="navbar navbar-expand-lg navbar-light <?= $bg; ?>">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container">
         <a class="text-white font-weight-bold navbar-brand" href="<?= $pages->get('/')->url; ?>"><?= $site->company_name; ?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
