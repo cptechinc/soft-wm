@@ -1,4 +1,4 @@
-		<footer class="bg-warning">
+		<footer class="bg-info">
 			<div class='container'>
 				<strong class="text-white">Session ID: <?php echo session_id(); ?></strong>
 				<div class="row pt-2">
