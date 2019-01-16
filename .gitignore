@@ -1,3 +1,4 @@
 # Project Configs
 config.php
 /vendor
+/wire
