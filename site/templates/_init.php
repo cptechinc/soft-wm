@@ -12,7 +12,7 @@
  */
 
 include_once("./_func.php"); // include our shared functions
-// include_once("./_dbfunc.php");
+include_once("./_dbfunc.php");
 $config->styles->append(hash_templatefile('styles/bootstrap.min.css'));
 $config->styles->append('//fonts.googleapis.com/css?family=Lusitana:400,700|Quattrocento:400,700');
 $config->styles->append('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
