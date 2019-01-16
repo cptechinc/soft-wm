@@ -2,7 +2,7 @@
 	<div class="container page">
 		<div class="row">
 			<div class="col-sm-6 mx-auto login">
-                <div class="sign-in">
+                <div class="sign-in shadow-lg">
                     <div class="card rounded" style="col-sm-6">
                         <div class="card-body bg-primary text-white">
                             <p class="text-center"><img src="<?= $appconfig->companylogo->url; ?>" alt="<?= $appconfig->companydisplayname.' logo'; ?>"></p>
