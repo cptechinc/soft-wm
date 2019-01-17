@@ -23,7 +23,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                    	<a href="<?php echo $config->pages->account; ?>redir/?action=logout" class="btn btn-danger logout">Logout</a>
+                    	<a href="<?php echo $config->pages->account; ?>redir/?action=logout" class="btn btn-warning logout">Logout</a>
                     </li>
                 <?php endif; ?>
           	</ul>
