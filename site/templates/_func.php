@@ -1,4 +1,7 @@
 <?php
+	use Dplus\ProcessWire\DplusWire;
+	use Dplus\Dpluso\ScreenFormatters\TableScreenMaker;
+	use Purl\Url;
 
 /**
  * Shared functions used by the beginner profile
@@ -102,3 +105,49 @@ function hash_templatefile($filename) {
 	$hash = hash_file(Processwire\wire('config')->userAuthHashType, Processwire\wire('config')->paths->templates.$filename);
 	return Processwire\wire('config')->urls->templates.$filename.'?v='.$hash;
 }
+
+/* =============================================================
+   URL FUNCTIONS
+ ============================================================ */
+	 function get_localhostURL($path) {
+		 $config = DplusWire::wire('config');
+		 $url = new Url('127.0.0.1');
+
+		 // IF the path provided contains the httpd directory path
+		 if (strpos($path, $config->directory_httpd) !== false) {
+			 $url->path = $path;
+		 } else {
+			 $url->path = $config->directory_httpd . $path;
+		 }
+		 return $url->getUrl();
+	 }
+
+ /* =============================================================
+   FILE FUNCTIONS
+ ============================================================ */
+	 /**
+	 * Writes an array one datem per line into the dplus directory
+	 * @param  array $data      Array of Lines for the request
+	 * @param  string $filename What to name File
+	 * @return void
+	 */
+	function write_dplusfile($data, $filename) {
+		$file = '';
+		foreach ($data as $line) {
+			$file .= $line . "\n";
+		}
+		$vard = "/usr/capsys/ecomm/" . $filename;
+		$handle = fopen($vard, "w") or die("cant open file");
+		fwrite($handle, $file);
+		fclose($handle);
+	}
+
+	function curl_redir($url) {
+		$curl = curl_init();
+		curl_setopt_array($curl, array(
+			CURLOPT_RETURNTRANSFER => 1,
+			CURLOPT_URL => $url,
+			CURLOPT_FOLLOWLOCATION => true
+		));
+		return curl_exec($curl);
+	}
