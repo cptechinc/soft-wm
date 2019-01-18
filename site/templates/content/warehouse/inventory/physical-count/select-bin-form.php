@@ -2,14 +2,14 @@
 <div>
 	<form action="<?= $page->fullURL->getUrl(); ?>" method="GET" class="select-bin-form">
 		<div class="form-group">
-			<label for="binID">Bin ID</label>
+			<label class="h5 text-info" for="binID">Bin ID</label>
 			<div class="input-group">
-				<input type="text" class="form-control" id="binID" name="binID">
-				<span class="input-group-btn">
-					<button type="button" class="btn btn-default show-possible-bins"> <span class="fa fa-search" aria-hidden="true"></span> </button>
+				<input type="text" class="form-control border border-info" id="binID" name="binID">
+				<span class="input-group-append">
+					<button type="button" class="btn btn-info show-possible-bins">Search&ensp;<span class="fa fa-search" aria-hidden="true"></span> </button>
 				</span>
 			</div>
 		</div>
-		<button type="submit" class="btn btn-primary not-round"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Submit</button>
+		<button type="submit" class="btn btn-success not-round">Submit&ensp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
 	</form>
 </div>
