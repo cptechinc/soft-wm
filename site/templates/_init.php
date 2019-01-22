@@ -12,8 +12,10 @@
  */
 
 include_once("./_func.php"); // include our shared functions
-// include_once("./_dbfunc.php");
-$config->styles->append(hash_templatefile('styles/bootstrap.min.css'));
+//include_once("./_dbfunc.php");
+$config->styles->append(hash_templatefile('styles/bootstrap-grid.min.css'));
+$config->styles->append(hash_templatefile('styles/theme.css'));
+
 $config->styles->append('//fonts.googleapis.com/css?family=Lusitana:400,700|Quattrocento:400,700');
 $config->styles->append('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 $config->styles->append('//www.fuelcdn.com/fuelux/3.13.0/css/fuelux.min.css');
@@ -29,7 +31,7 @@ $config->scripts->append(hash_templatefile('scripts/main.js'));
 
 
 // AFTER LOADING CONFIGS, CLASSES, AND FUNCTIONS CHECK FOR LOGIN
-$user->loggedin = is_validlogin(session_id());
+//$user->loggedin = is_validlogin(session_id());
 
 // if ($user->loggedin) {
 // 	setup_user(session_id());
